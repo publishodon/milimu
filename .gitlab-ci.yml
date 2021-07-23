@@ -12,6 +12,7 @@ deploy:
   stage: deploy
   image: shopozor/docker-compose:$TOOLS_SHA
   before_script:
+  - git
   - docker-compose -f core/docker-compose.yaml build publishodon
   script:
   - docker-compose -f core/docker-compose.yaml up --exit-code-from publishodon publishodon 
