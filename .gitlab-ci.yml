@@ -5,8 +5,8 @@ before_script:
   - git config --global url."https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.hidora.com/".insteadOf "git@gitlab.hidora.com:"
   - git submodule sync && git submodule update --init
 
-variables:
-  GIT_SUBMODULE_STRATEGY: recursive
+# variables:
+#   GIT_SUBMODULE_STRATEGY: recursive
 
 deploy:
   stage: deploy
