@@ -2,7 +2,8 @@ stages:
 - deploy
 
 before_script:
-  - git config --global url "https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.hidora.com/softozor/publishodon/milimu.git"
+  - git config --global url."https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.hidora.com/".insteadOf "git@gitlab.hidora.com:"
+  - git submodule sync && git submodule update --init
 
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
