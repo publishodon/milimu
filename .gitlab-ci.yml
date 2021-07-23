@@ -13,3 +13,6 @@ deploy:
   - docker-compose up --exit-code-from publishodon publishodon 
   after_script:
   - docker-compose down --rmi all -v --remove-orphans
+  # only:
+  #   variables:
+  #     - $RUN == "true"
