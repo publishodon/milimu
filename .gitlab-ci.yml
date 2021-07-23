@@ -8,11 +8,11 @@ deploy:
   stage: deploy
   image: shopozor/docker-compose:$TOOLS_SHA
   before_script:
-  - docker-compose build publishodon
+  - docker-compose -f core/docker-compose.yaml build publishodon
   script:
-  - docker-compose up --exit-code-from publishodon publishodon 
+  - docker-compose -f core/docker-compose.yaml up --exit-code-from publishodon publishodon 
   after_script:
-  - docker-compose down --rmi all -v --remove-orphans
+  - docker-compose -f core/docker-compose.yaml down --rmi all -v --remove-orphans
   # only:
   #   variables:
   #     - $RUN == "true"
