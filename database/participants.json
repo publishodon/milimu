@@ -3,13 +3,13 @@
     {
       "account": "+41798325891",
       "name": "dupont",
-	  "start": "2021-07-22T00:00:00",
+	  "start": "2021-07-23T00:00:00",
 	  "communicationService": "WhatsAppService"
     },
 	{
       "account": "+41798325891",
       "name": "dupond",
-	  "start": "2021-07-21T00:00:00",
+	  "start": "2021-07-24T00:00:00",
 	  "communicationService": "WhatsAppService"
     }
   ],
