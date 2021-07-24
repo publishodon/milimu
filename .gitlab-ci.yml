@@ -20,7 +20,7 @@ build:
   - dotnet publish -c release
   artifacts:
     untracked: false
-    expire_in: 30 days
+    expire_in: 1 hour
     paths:
     - ./bin/release/net5.0
   # TODO: activate this:
@@ -34,7 +34,7 @@ run:
   before_script:
   - cd ./bin/release/net5.0
   script:
-  - ./App --root-folder $CI_PROJECT_DIR --participants-database ./database/participants.json --publications-folder ./database/publications
+  - ./bin/release/net5.0/App --root-folder . --participants-database ./database/participants.json --publications-folder ./database/publications
   # TODO: activate this:
   # only:
   #   variables:
