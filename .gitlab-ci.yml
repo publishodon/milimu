@@ -1,19 +1,40 @@
 stages:
-- deploy
+- build
+- run
 
 variables:
   SOURCE_NAME: gitlab-publishodon-service
 
-deploy:
-  stage: deploy
-  image: shopozor/docker-compose:$TOOLS_SHA
+build:
+  stage: build
+  image: mcr.microsoft.com/dotnet/sdk:5.0-alpine-amd64
   before_script:
-  - dotnet nuget add source "${CI_API_V4_URL}/projects/172/packages/nuget/index.json" --name ${SOURCE_NAME} --username $GITLAB_USER_LOGIN --password $PRIVATE_ACCESS_TOKEN --store-password-in-clear-text
-  - docker-compose build
+  - |
+    dotnet nuget add source "${CI_API_V4_URL}/projects/172/packages/nuget/index.json" \
+      --name ${SOURCE_NAME} \
+      --username $GITLAB_USER_LOGIN \
+      --password $PRIVATE_ACCESS_TOKEN \
+      --store-password-in-clear-text
   script:
-  - docker-compose up --exit-code-from publishodon publishodon 
-  after_script:
-  - docker-compose down --rmi all -v --remove-orphans
+  - dotnet restore
+  - dotnet publish -c release
+  artifacts:
+    untracked: false
+    expire_in: 30 days
+    paths:
+    - ./App/bin/release/net5.0
+  # TODO: activate this:
+  # only:
+  #   variables:
+  #     - $RUN == "true"
+
+run:
+  stage: run
+  image: mcr.microsoft.com/dotnet/runtime:5.0-alpine-amd64
+  before_script:
+  - cd ./App/bin/release/net5.0
+  script:
+  - ./App --root-folder $CI_PROJECT_DIR --participants-database ./database/participants.json --publications-folder ./database/publications
   # TODO: activate this:
   # only:
   #   variables:
