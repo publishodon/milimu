@@ -22,7 +22,7 @@ build:
     untracked: false
     expire_in: 30 days
     paths:
-    - ./App/bin/release/net5.0
+    - ./bin/release/net5.0
   # TODO: activate this:
   # only:
   #   variables:
@@ -32,7 +32,7 @@ run:
   stage: run
   image: mcr.microsoft.com/dotnet/runtime:5.0-alpine-amd64
   before_script:
-  - cd ./App/bin/release/net5.0
+  - cd ./bin/release/net5.0
   script:
   - ./App --root-folder $CI_PROJECT_DIR --participants-database ./database/participants.json --publications-folder ./database/publications
   # TODO: activate this:
