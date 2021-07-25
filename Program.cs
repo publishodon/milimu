@@ -14,6 +14,7 @@
 
         private static async Task<int> Main(string[] args)
         {
+            Log.Info("Starting application...");
             using var kernel = KernelFactory.Create();
             var bootstrapper = kernel.Get<Bootstrapper>();
             var result = await bootstrapper.RunAsync(args);
