@@ -34,7 +34,7 @@ run:
   before_script:
   - cd ./bin/release/net5.0
   script:
-  - ./bin/release/net5.0/App --root-folder . --participants-database ./database/participants.json --publications-folder ./database/publications
+  - ./App --root-folder $CI_PROJECT_DIR --participants-database ./database/participants.json --publications-folder ./database/publications
   # TODO: activate this:
   # only:
   #   variables:
