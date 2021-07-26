@@ -23,10 +23,9 @@ build:
     expire_in: 1 hour
     paths:
     - ./bin/release/net5.0
-  # TODO: activate this:
-  # only:
-  #   variables:
-  #     - $RUN == "true"
+  only:
+    variables:
+    - $RUN == "true"
 
 run:
   stage: run
@@ -35,7 +34,6 @@ run:
   - cd ./bin/release/net5.0/publish
   script:
   - ./App --root-folder $CI_PROJECT_DIR --participants-database ./database/participants.json --publications-folder ./database/publications
-  # TODO: activate this:
-  # only:
-  #   variables:
-  #     - $RUN == "true"
+  only:
+    variables:
+    - $RUN == "true"
