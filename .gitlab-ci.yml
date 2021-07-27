@@ -23,9 +23,6 @@ build:
     expire_in: 1 hour
     paths:
     - ./bin/release/net5.0
-  only:
-    variables:
-    - $RUN == "true"
 
 run:
   stage: run
