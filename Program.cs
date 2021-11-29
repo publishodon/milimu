@@ -1,15 +1,12 @@
 ﻿namespace App
 {
     using System.Threading.Tasks;
-    using Ninject;
-    using Softozor.Publishodon;
-    using Softozor.Publishodon.Logging;
+    using Properties;
     using log4net;
-    using App.Properties;
-
+    using Softozor.Publishodon.Logging;
+    
     internal class Program
     {
-
         private static readonly ILog Log = LoggingSetup.CreateLog(Resources.log4net, typeof(Program), nameof(Program));
 
         private static async Task<int> Main(string[] args)

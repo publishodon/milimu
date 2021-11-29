@@ -61,19 +61,7 @@ namespace App.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-        ///
-        ///&lt;log4net&gt;
-        ///    &lt;appender name=&quot;ConsoleAppender&quot; type=&quot;log4net.Appender.ConsoleAppender&quot;&gt;
-        ///        &lt;layout type=&quot;log4net.Layout.PatternLayout&quot;&gt;
-        ///            &lt;conversionPattern value=&quot;%message%newline&quot; /&gt;
-        ///        &lt;/layout&gt;
-        ///    &lt;/appender&gt;
-        ///    &lt;root&gt;
-        ///        &lt;level value=&quot;ALL&quot; /&gt;
-        ///        &lt;appender-ref ref=&quot;ConsoleAppender&quot; /&gt;
-        ///    &lt;/root&gt;
-        ///&lt;/log4net&gt;.
+        ///   Looks up a localized string similar to log4net.config.
         /// </summary>
         internal static string log4net {
             get {
