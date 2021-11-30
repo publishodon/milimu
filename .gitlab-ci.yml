@@ -23,9 +23,6 @@ build:
     expire_in: 1 hour
     paths:
     - ./bin/release/net5.0
-  only:
-    variables:
-    - $RUN == "true"
 
 run:
   stage: run
@@ -35,7 +32,5 @@ run:
     ./bin/release/net5.0/App --root-folder . \
       --participants-database ./database/participants.json \
       --publications-folder ./database/publications \
-      --file-server-url ${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/repository/files
-  only:
-    variables:
-    - $RUN == "true"
+      --file-server-url ${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/repository/files \
+      --time-period ${TIME_PERIOD}
