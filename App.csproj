@@ -12,16 +12,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Softozor.Publishodon" Version="1.0.8" />
-      <PackageReference Include="Softozor.Publishodon.BusinessLayer" Version="1.0.3" />
-      <PackageReference Include="Softozor.Publishodon.Json" Version="1.0.4" />
-      <PackageReference Include="Softozor.Publishodon.Services.SMS" Version="1.0.4" />
-      <PackageReference Include="Softozor.Publishodon.Services.WhatsApp" Version="1.0.3" />
-      <PackageReference Include="Softozor.Publishodon.Twilio" Version="1.0.5" />
-      <PackageReference Include="Softozor.Publishodon.Utils" Version="1.0.5" />
-    </ItemGroup>
-
-    <ItemGroup>
       <Compile Update="Properties\Resources.Designer.cs">
         <DesignTime>True</DesignTime>
         <AutoGen>True</AutoGen>
@@ -34,6 +24,16 @@
         <Generator>ResXFileCodeGenerator</Generator>
         <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Softozor.Publishodon" Version="1.0.8" />
+      <PackageReference Include="Softozor.Publishodon.BusinessLayer" Version="1.0.3" />
+      <PackageReference Include="Softozor.Publishodon.Json" Version="1.0.4" />
+      <PackageReference Include="Softozor.Publishodon.Services.SMS" Version="1.0.4" />
+      <PackageReference Include="Softozor.Publishodon.Services.WhatsApp" Version="1.0.3" />
+      <PackageReference Include="Softozor.Publishodon.Twilio" Version="1.0.5" />
+      <PackageReference Include="Softozor.Publishodon.Utils" Version="1.0.5" />
     </ItemGroup>
 
 </Project>

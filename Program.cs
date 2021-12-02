@@ -1,4 +1,7 @@
-﻿namespace App
+﻿using Ninject;
+using Softozor.Publishodon;
+
+namespace App
 {
     using System.Threading.Tasks;
     using Properties;
